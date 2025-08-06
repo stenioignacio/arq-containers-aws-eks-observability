@@ -26,7 +26,7 @@ variable "ssm_grafana_subnets" {
 }
 variable "node_group_temp_desired" {
   type = number
-  default = 1
+  default = 2
 }
 
 variable "karpenter_capacity" {

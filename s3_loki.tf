@@ -2,6 +2,8 @@
 
 resource "aws_s3_bucket" "loki-chunks" {
   bucket = format("%s-%s-loki-chunks", var.project_name, data.aws_caller_identity.current.account_id)
+
+  force_destroy = true
 }
 
 resource "aws_s3_bucket_ownership_controls" "loki-chunks" {
@@ -24,6 +26,8 @@ resource "aws_s3_bucket_acl" "loki-chunks" {
 
 resource "aws_s3_bucket" "loki-admin" {
   bucket = format("%s-%s-loki-admin", var.project_name, data.aws_caller_identity.current.account_id)
+
+    force_destroy = true
 }
 
 resource "aws_s3_bucket_ownership_controls" "loki-admin" {
@@ -46,6 +50,8 @@ resource "aws_s3_bucket_acl" "loki-admin" {
 
 resource "aws_s3_bucket" "loki-ruler" {
   bucket = format("%s-%s-loki-ruler", var.project_name, data.aws_caller_identity.current.account_id)
+
+    force_destroy = true
 }
 
 resource "aws_s3_bucket_ownership_controls" "loki-ruler" {
