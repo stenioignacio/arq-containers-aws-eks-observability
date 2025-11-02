@@ -1,6 +1,6 @@
 provider "aws" {
   region = var.project_region
-  profile = "lab"
+  profile = "lab-iam"
 
   default_tags {
     tags = {
